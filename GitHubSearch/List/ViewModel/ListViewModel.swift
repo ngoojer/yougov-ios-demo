@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class RepositoryListViewModel: ObservableObject {
+class ListViewModel: ObservableObject {
     @Published public var searchText = ""
     @Published public var repositories: [Repository] = []
     

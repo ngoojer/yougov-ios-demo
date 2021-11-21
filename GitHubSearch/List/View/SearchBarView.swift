@@ -8,6 +8,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             TextField("Search repository", text: $text)
+                .autocapitalization(.none)
                 .padding(7)
                 .padding(.horizontal, 10)
                 .background(Color(.systemGray6))

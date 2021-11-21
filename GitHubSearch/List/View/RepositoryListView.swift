@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RepositoryListView : View {
-    @ObservedObject var viewModel: RepositoryListViewModel
+    @ObservedObject var viewModel: ListViewModel
     
     var body: some View {
         NavigationView {
@@ -15,9 +15,12 @@ struct RepositoryListView : View {
                 }
             }
             .navigationBarTitle(Text("Repositories"))
-            .onAppear(perform: {
+            .onAppear {
+                //self.viewModel.onAppear()
+            }
+            .onLoad {
                 self.viewModel.onAppear()
-            })
+            }
         }
     }
 }
