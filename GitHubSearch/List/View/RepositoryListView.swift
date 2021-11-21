@@ -7,19 +7,15 @@ struct RepositoryListView : View {
         NavigationView {
             VStack {
                 SearchBar(text: $viewModel.searchText)
-                
-                List(viewModel.repositories) { repository in
-                    NavigationLink(destination: DetailView(viewModel: DetailViewModel(repo: repository))) {
-                        RepositoryCell(displayData: repository)
+                List(viewModel.displayData) { displayData in
+                    NavigationLink(destination: DetailView(viewModel: displayData)) {
+                        RepositoryCellView(displayData: displayData)
                     }
                 }
             }
             .navigationBarTitle(Text("Repositories"))
-            .onAppear {
-                //self.viewModel.onAppear()
-            }
             .onLoad {
-                self.viewModel.onAppear()
+                self.viewModel.load()
             }
         }
     }

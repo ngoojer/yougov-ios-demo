@@ -1,24 +1,38 @@
 import Foundation
 import SwiftUI
 
-struct RepositoryCell: View {
-    private let displayData: Repository
-    
-    init(displayData: Repository) {
-        self.displayData = displayData
+struct RepositoryCellView: View {
+    @ObservedObject private var viewModel: CellViewModel
+
+    private let placeholderImge = UIImage(named: "place")!
+    private let screenWidth = UIScreen.main.bounds.width
+
+    public init(displayData: CellViewModel) {
+        self.viewModel = displayData
     }
     
     var body: some View {
-        VStack (alignment: .leading) {
+        HStack {
+            Image(uiImage: viewModel.avatar)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: screenWidth * 0.2,
+                       height: screenWidth * 0.2,
+                       alignment: .center)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.blue, lineWidth: 1))
+        }
+        
+        VStack (alignment: .leading, spacing: 5) {
             
-            Text(displayData.name ?? "")
+            Text(viewModel.fullName)
                 .font(.headline)
             
             HStack(alignment: .top){
                 Text("Language:")
                     .font(.subheadline)
                     .fontWeight(.medium)
-                Text(displayData.language ?? "")
+                Text(viewModel.language)
                     .font(.subheadline)
                     .fontWeight(.medium)
             }
@@ -27,11 +41,11 @@ struct RepositoryCell: View {
                 Text("Star:")
                     .font(.subheadline)
                     .fontWeight(.medium)
-                Text(displayData.starCount ?? "")
+                Text(viewModel.star)
                     .font(.subheadline)
                     .fontWeight(.medium)
             }
         }
-        .frame(height: 65)
+        .frame(height: 75)
     }
 }

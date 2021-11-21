@@ -2,13 +2,15 @@ import Foundation
 import UIKit
 import Combine
 
-class DetailViewModel: ObservableObject {
+class CellViewModel: Identifiable, ObservableObject {
+    
     @Published public var avatar = UIImage()
     private let repo: Repository
     private var cancellable: AnyCancellable?
     
     public init(repo: Repository) {
         self.repo = repo
+        loadAvatarImage()
     }
     
     public var ownerName: String {
@@ -17,25 +19,25 @@ class DetailViewModel: ObservableObject {
     
     public var creationTime: String {
         guard let strDate = repo.createdAt,
-              let date = DetailViewModel.dateFormatterServer
+              let date = CellViewModel.dateFormatterServer
                 .date(from: strDate) else {fatalError("invalid date")}
-        return DetailViewModel.dateFormatterLocal.string(from: date)
+        return CellViewModel.dateFormatterLocal.string(from: date)
     }
     
-    public var name: String {
+    public var repoName: String {
         repo.name ?? "NA"
+    }
+    
+    public var fullName: String {
+        repo.fullName ?? "NA"
     }
     
     public var star: String {
         repo.starCount ?? "NA"
     }
     
-    public var langage: String {
+    public var language: String {
         repo.language ?? "NA"
-    }
-    
-    public func onAppear() {
-        loadAvatarImage()
     }
     
     private func loadAvatarImage(){
@@ -50,7 +52,7 @@ class DetailViewModel: ObservableObject {
     }
 }
 
-extension DetailViewModel {
+extension CellViewModel {
     private static let dateFormatterServer: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

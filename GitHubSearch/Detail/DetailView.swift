@@ -3,7 +3,7 @@ import SwiftUI
 import Combine
 
 struct DetailView: View {
-    @ObservedObject var viewModel: DetailViewModel
+    @ObservedObject var viewModel: CellViewModel
     
     let screenWidth = UIScreen.main.bounds.width
     var body: some View {
@@ -23,7 +23,7 @@ struct DetailView: View {
                 VStack (alignment: .leading, spacing: 20){
                     HStack {
                         Text("Repo Name: ").bold()
-                        Text(viewModel.name).italic()
+                        Text(viewModel.repoName).italic()
                     }
                     
                     HStack {
@@ -36,7 +36,7 @@ struct DetailView: View {
                     }
                     HStack {
                         Text("Language: ").bold()
-                        Text(viewModel.langage).italic()
+                        Text(viewModel.language).italic()
                     }
                 }
                 .padding(.top, 20)
@@ -44,9 +44,7 @@ struct DetailView: View {
             }
         }
         .navigationBarTitle(viewModel.ownerName)
-        .onAppear(perform: {
-            self.viewModel.onAppear()
-        })
+        .onAppear { }
     }
 }
 

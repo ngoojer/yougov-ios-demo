@@ -3,7 +3,7 @@ import Combine
 
 class ListViewModel: ObservableObject {
     @Published public var searchText = ""
-    @Published public var repositories: [Repository] = []
+    @Published public var displayData: [CellViewModel] = []
     
     private var searchCancellable: Cancellable? {
         didSet {
@@ -34,7 +34,7 @@ class ListViewModel: ObservableObject {
             }.store(in: &cancellables)
     }
     
-    public func onAppear() {
+    public func load() {
         self.fetchData(string: "yougov ios demo")
     }
     
@@ -45,12 +45,11 @@ class ListViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     print(error)
-                    self.repositories = []
+                    self.displayData = []
                 case .finished: break
                 }
             } receiveValue: { [weak self] repo in
-                self?.repositories = repo.items
-                print("Total count = \(repo.totalCount)")
+                self?.displayData = repo.items.map { CellViewModel(repo: $0)}
                 print("Result count = \(repo.items.count)")
             }
             .store(in: &cancellables)
