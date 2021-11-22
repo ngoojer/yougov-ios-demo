@@ -3,8 +3,6 @@ import SwiftUI
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
-    private let screenWidth = UIScreen.main.bounds.width
-
     public init(displayData: CellViewModel) {
         self.viewModel = displayData
     }
@@ -33,8 +31,8 @@ struct CellView: View {
     }
     
     struct ImageView: View {
-        let avatarImage: UIImage
-        let screenWidth = UIScreen.main.bounds.width
+        public let avatarImage: UIImage
+        private let screenWidth = UIScreen.main.bounds.width
         
         var body: some View {
             HStack {
@@ -51,7 +49,7 @@ struct CellView: View {
     }
     
     struct ImageViewLike: View {
-        let imageName: String
+        public let imageName: String
         private let placeholderImge = UIImage(named: "place")!
 
         var body: some View {
@@ -69,7 +67,7 @@ struct CellView: View {
     }
     
     struct TextView: View {
-        let text: String
+        public let text: String
         
         var body: some View {
             Text(text)

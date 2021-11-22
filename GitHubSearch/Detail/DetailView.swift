@@ -40,7 +40,7 @@ struct DetailView: View {
 
     struct ImageView: View {
         let avatarImage: UIImage
-        let screenWidth = UIScreen.main.bounds.width
+        private let screenWidth = UIScreen.main.bounds.width
         
         var body: some View {
             HStack {
