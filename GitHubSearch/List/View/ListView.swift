@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RepositoryListView : View {
+struct ListView : View {
     @ObservedObject var viewModel: ListViewModel
     
     var body: some View {
@@ -9,7 +9,7 @@ struct RepositoryListView : View {
                 SearchBar(text: $viewModel.searchText)
                 List(viewModel.displayData) { displayData in
                     NavigationLink(destination: DetailView(viewModel: displayData)) {
-                        RepositoryCellView(displayData: displayData)
+                        CellView(displayData: displayData)
                     }
                 }
             }
@@ -24,7 +24,7 @@ struct RepositoryListView : View {
 #if DEBUG
 struct RepositoryListView_Previews : PreviewProvider {
     static var previews: some View {
-        RepositoryListView(viewModel: .init())
+        ListView(viewModel: .init())
     }
 }
 #endif

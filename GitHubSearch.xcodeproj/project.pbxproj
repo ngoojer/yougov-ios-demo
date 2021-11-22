@@ -19,8 +19,8 @@
 		D94E9F08274AA52C0075DE64 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F06274AA52C0075DE64 /* ImageCache.swift */; };
 		D94E9F09274AA52C0075DE64 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F07274AA52C0075DE64 /* ImageLoader.swift */; };
 		D94E9F29274AA63C0075DE64 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F23274AA63C0075DE64 /* SearchBarView.swift */; };
-		D94E9F2A274AA63C0075DE64 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F24274AA63C0075DE64 /* RepositoryListView.swift */; };
-		D94E9F2B274AA63C0075DE64 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F25274AA63C0075DE64 /* RepositoryCellView.swift */; };
+		D94E9F2A274AA63C0075DE64 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F24274AA63C0075DE64 /* ListView.swift */; };
+		D94E9F2B274AA63C0075DE64 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F25274AA63C0075DE64 /* CellView.swift */; };
 		D94E9F2C274AA63C0075DE64 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F26274AA63C0075DE64 /* ListViewModel.swift */; };
 		D94E9F2D274AA63C0075DE64 /* ReositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F27274AA63C0075DE64 /* ReositoryModel.swift */; };
 		D94E9F2E274AA63C0075DE64 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E9F28274AA63C0075DE64 /* RepositoryService.swift */; };
@@ -44,8 +44,8 @@
 		D94E9F06274AA52C0075DE64 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D94E9F07274AA52C0075DE64 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D94E9F23274AA63C0075DE64 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		D94E9F24274AA63C0075DE64 /* RepositoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
-		D94E9F25274AA63C0075DE64 /* RepositoryCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		D94E9F24274AA63C0075DE64 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		D94E9F25274AA63C0075DE64 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		D94E9F26274AA63C0075DE64 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D94E9F27274AA63C0075DE64 /* ReositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReositoryModel.swift; sourceTree = "<group>"; };
 		D94E9F28274AA63C0075DE64 /* RepositoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		D94E9F40274AB7E40075DE64 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D94E9F25274AA63C0075DE64 /* RepositoryCellView.swift */,
-				D94E9F24274AA63C0075DE64 /* RepositoryListView.swift */,
+				D94E9F25274AA63C0075DE64 /* CellView.swift */,
+				D94E9F24274AA63C0075DE64 /* ListView.swift */,
 				D94E9F23274AA63C0075DE64 /* SearchBarView.swift */,
 			);
 			path = View;
@@ -273,14 +273,14 @@
 				D94E9F3E274AB6470075DE64 /* SwiftUI+Utils.swift in Sources */,
 				D94E9F03274AA5130075DE64 /* NetworkMonitor.swift in Sources */,
 				D94E9F08274AA52C0075DE64 /* ImageCache.swift in Sources */,
-				D94E9F2B274AA63C0075DE64 /* RepositoryCellView.swift in Sources */,
+				D94E9F2B274AA63C0075DE64 /* CellView.swift in Sources */,
 				D94E9EE4274AA42D0075DE64 /* SceneDelegate.swift in Sources */,
 				D94E9F2E274AA63C0075DE64 /* RepositoryService.swift in Sources */,
 				D94E9F02274AA5130075DE64 /* NetworkManager.swift in Sources */,
 				D94E9F2D274AA63C0075DE64 /* ReositoryModel.swift in Sources */,
 				D94E9F09274AA52C0075DE64 /* ImageLoader.swift in Sources */,
 				D94E9F01274AA5130075DE64 /* Endpoint.swift in Sources */,
-				D94E9F2A274AA63C0075DE64 /* RepositoryListView.swift in Sources */,
+				D94E9F2A274AA63C0075DE64 /* ListView.swift in Sources */,
 				D94E9F29274AA63C0075DE64 /* SearchBarView.swift in Sources */,
 				D94E9F04274AA5130075DE64 /* NetworkService.swift in Sources */,
 				D94E9F35274AA6AC0075DE64 /* CellViewModel.swift in Sources */,

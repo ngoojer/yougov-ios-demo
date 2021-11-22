@@ -1,10 +1,12 @@
 import Foundation
-import UIKit
 import Combine
+import UIKit
 
 class CellViewModel: Identifiable, ObservableObject {
     
     @Published public var avatar = UIImage()
+    @Published public var like = false
+    
     private let repo: Repository
     private var cancellable: AnyCancellable?
     
@@ -38,6 +40,11 @@ class CellViewModel: Identifiable, ObservableObject {
     
     public var language: String {
         repo.language ?? "NA"
+    }
+    
+    public var likeImageName: String {
+        let name = like ? "like_fill" : "like"
+        return name
     }
     
     private func loadAvatarImage(){
