@@ -6,7 +6,7 @@ struct DetailView: View {
     @ObservedObject var viewModel: CellViewModel
     
     var body: some View {
-        NavigationView {
+        VStack {
             ScrollContent(viewModel: viewModel)
         }
         .navigationBarTitle(viewModel.ownerName)
